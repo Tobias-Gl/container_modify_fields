@@ -5,7 +5,7 @@
 	"homepage": "https://github.com/georgringer/container_modify_fields",
 	"license": ["GPL-2.0-or-later"],
 	"require": {
-		"b13/container": "^1.5",
+		"b13/container": "^1.5 || ^2.0  || ^2.1",
 		"typo3/cms-backend": "^9.5 || ^10.4 || ^11.5"
 	},
 	"extra": {
