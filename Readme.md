@@ -31,7 +31,6 @@ The configuration must be done in PageTsConfig with the following syntax:
             cols
             rows
             wrap
-             
         }
 
         # Instead of <colpos> and <child-ctype> also "_all" is valid
