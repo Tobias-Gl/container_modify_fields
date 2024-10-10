@@ -22,6 +22,16 @@ The configuration must be done in PageTsConfig with the following syntax:
             required = 1
             disabled = 1
             fixedItemValue = 1
+            readonly = 1
+            maxitems
+            minitems
+            max
+            size
+            autoSizeMax
+            cols
+            rows
+            wrap
+             
         }
 
         # Instead of <colpos> and <child-ctype> also "_all" is valid
@@ -88,4 +98,22 @@ TCEFORM.tt_content.container {
   }
 }
 
+```
+
+### Example 4: minitems and maxitems
+
+> The behaviour of elements inside container "b13-2cols-with-header-container" is changed:
+> - The teaser element inside colPos "200" must contain an item and is limited to 2 items
+
+```
+TCEFORM.tt_content.container {
+  b13-2cols-with-header-container {
+    200 {
+      teaser { 
+        items.minitems = 1      
+        items.maxitems = 2
+      }
+    }
+  }
+}
 ```

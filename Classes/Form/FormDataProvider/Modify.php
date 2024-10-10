@@ -85,6 +85,33 @@ class Modify extends AbstractItemProvider implements FormDataProviderInterface
                     }
                 }
             }
+            if (array_key_exists('maxitems', $fieldConfiguration)) {
+                $result['processedTca']['columns'][$fieldName]['config']['maxitems'] = max(0, (int)$fieldConfiguration['maxitems']);
+            }
+            if (array_key_exists('minitems', $fieldConfiguration)) {
+                $result['processedTca']['columns'][$fieldName]['config']['minitems'] = max(0, (int)$fieldConfiguration['minitems']);
+            }
+            if (array_key_exists('max', $fieldConfiguration)) {
+                $result['processedTca']['columns'][$fieldName]['config']['max'] = max(0, (int)$fieldConfiguration['max']);
+            }
+            if (array_key_exists('size', $fieldConfiguration)) {
+                $result['processedTca']['columns'][$fieldName]['config']['size'] = max(1, (int)$fieldConfiguration['size']);
+            }
+            if (array_key_exists('readOnly', $fieldConfiguration)) {
+                $result['processedTca']['columns'][$fieldName]['config']['readOnly'] = (bool)$fieldConfiguration['readOnly'];
+            }
+            if (array_key_exists('enableCopyToClipboard', $fieldConfiguration)) {
+                $result['processedTca']['columns'][$fieldName]['config']['enableCopyToClipboard'] = (bool)$fieldConfiguration['enableCopyToClipboard'];
+            }
+            if (array_key_exists('cols', $fieldConfiguration)) {
+                $result['processedTca']['columns'][$fieldName]['config']['cols'] = max(1, (int)$fieldConfiguration['cols']);
+            }
+            if (array_key_exists('rows', $fieldConfiguration)) {
+                $result['processedTca']['columns'][$fieldName]['config']['rows'] = max(1, (int)$fieldConfiguration['rows']);
+            }
+            if (array_key_exists('wrap', $fieldConfiguration)) {
+                $result['processedTca']['columns'][$fieldName]['config']['wrap'] = (string)$fieldConfiguration['wrap'];
+            }
         }
     }
 }
